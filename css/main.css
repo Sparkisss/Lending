@@ -1,0 +1,230 @@
+/* @charset "UTF-8"; */
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    color: #fff;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus, :active {
+    outline: none;
+}
+a:focus, a:active {
+    outline: none;
+}
+nav, footer, header, aside {
+    display: block;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input, button, textarea {
+    font-family: inherit;
+}
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a, a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+/*--------------------*/
+:root {
+  --index: calc(1vw + 1vh);
+  --transition: 1.25s cubic-bezier(.2, .6, 0, 1);
+}
+html,body {
+  min-height: 100%;
+  overflow: clip;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: visible;
+  z-index: 2;
+  background-color: #262c37;
+  border-bottom: 1px solid #394252;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9375rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  min-height: 4.375rem;
+}
+.header__logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #97af6e;
+  position: relative;
+  z-index: 5;
+}
+.menu__list {
+  display: flex;
+  align-items: center;
+  column-gap: 1.875rem;
+  row-gap: 0.3125rem;
+  flex-wrap: wrap;
+}
+.menu__link {
+  font-size: 1.125rem;
+}
+.menu__link:hover {
+  text-decoration: underline;
+}
+.icon-menu {
+  display: none;
+}
+
+@media (max-width:798.98px){
+  .menu__body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #262c37;
+    padding: 6.25rem 0.9375rem 1.25rem 0.9375rem;
+  }
+  .menu__list {
+    flex-direction: column;
+    gap: 2.1875rem;
+    align-items: center;
+  }
+  .menu__link {
+    font-size: 1.875rem;
+  }
+  .icon-menu {
+    display: block;
+    position: relative;
+    z-index: 5;
+    width: 1.875rem;
+    height: 1.125rem;
+  }
+  .icon-menu__line,
+  .icon-menu::before,
+  .icon-menu::after {
+    content: '';
+    position: absolute;
+    background-color: red;
+    height: 0.125rem;
+    width: 100%;
+    /* left: calc(-50% - 3.825rem); */
+    left: -60px;
+    transform: all 0.3s;
+  }
+
+  icon-menu:before{
+    top: 0;
+  }
+  .icon-menu::after{
+    bottom: 0;
+  }
+  .icon-menu__line {
+    top: 0;
+    /* top: calc(50% - 0.0625rem); */
+  }
+  .menu-open .icon-menu::before {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+  .menu-open .icon-menu::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+  }
+  .menu-open .icon-menu__line {
+    left: 50%;
+    width: 0;
+  }
+}
+/* --------------------------------------------------- */
+
+
+
+
+
+.main-wrapper {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  gap: calc(var(--index));
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+.slider {
+  /* transform: rotate(12.5deg); */
+  overflow: visible;
+}
+.slider:nth-child(odd) {
+  /* transform: rotate(192.5deg); */
+}
+.slider .slider__wrapper {
+  transition: var(--transition)!important;
+  will-change: transform;
+}
+.slider__item {
+  width: 21vw;
+  margin-bottom: calc(var(--index) * 2.6);
+  cursor: pointer;
+  transition: transform var(--transition);
+  box-shadow: #fff 0 0 10px 7px;
+  border-radius: 8px;
+}
+.slider__item:hover{
+  transform: scale(1.04);
+}
+.slider__img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius: 8px;
+}
+.slider:nth-child(odd) .slider__img {
+  /* transform: rotate(-180deg); */
+}
+
+
+
+.footer {
+
+}
