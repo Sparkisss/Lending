@@ -1,16 +1,3 @@
-// Работа со слайдами с использованием библиотек
-document.querySelectorAll('.slider').forEach((n, i) => {
-  window[`slider${i+1}`] = new Swiper(n, {
-  freeMode: true,
-  centeredSlider: true,
-  direction: 'vertical',
-  mousewheel: true,
-  slidesPerView: 1.75,
-  //slidesOffsetBefore: -125,
-  })
-})
-bindSwipers(slider1, slider2, slider3, slider4);
-
 // Работа с меню-бургер
 document.addEventListener('click', documentActions);
 
@@ -22,6 +9,9 @@ function documentActions(e) {
   }
 
   if (targetElement.closest('[data-goto]')) {
+    document.documentElement.classList.contains('menu-open') ?
+    document.documentElement.classList.remove('menu-open') : null;
+
     const goTo = targetElement.closest('[data-goto]').dataset.goto;
     const goToElement = document.querySelector(goTo);
     const headerHeight = document.querySelector('.header').offsetHeight;
